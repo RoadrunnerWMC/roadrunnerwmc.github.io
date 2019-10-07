@@ -2,6 +2,7 @@
 layout: post
 title:  "Parsing the Unparseable: Inaccessible SBNK Instruments"
 date:   2019-10-07
+categories: blog
 ---
 First blog post!
 
