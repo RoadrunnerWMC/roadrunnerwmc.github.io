@@ -28,7 +28,7 @@ ndspy, my Python library for working with various Nintendo DS file formats, actu
 
 Let's take a look at how SBNK files are structured. Here's an example (`BANK_ST04` from *Mario Hoops 3-on-3*):
 
-<img src="/blog/assets/001-sbnk-instruments/main-overview.png" style="height:450px;float:right;padding: 1em 0em 1em 2em" />
+<img src="/assets/001-sbnk-instruments/main-overview.png" style="height:450px;float:right;padding: 1em 0em 1em 2em" />
 
 - (in red) The file begins with a header struct, which, among other things, defines how many instruments there are. In this case, there are 0xB (11) of them.
 - (in green) That's followed by an array that the game uses to look up instruments by ID. Each element is 4 bytes long, and contains an instrument "type" value (first byte) and an offset to its actual data struct (next two bytes).
@@ -44,7 +44,7 @@ The data section (the blue one) is what we'll mainly be focusing on.
 
 All of the above is pretty well-documented online, and not too difficult to implement a parser for. At first, all was well. I began running into problems, though, when I tried my code on files such as `BANK_MUS_DOSUN_IN` from *Mario & Luigi: Partners in Time*. That file looks like this:
 
-<img src="/blog/assets/001-sbnk-instruments/inacc-ex1.png" style="width: 30%; float: left; padding: 1em 2em 1em 0em" />
+<img src="/assets/001-sbnk-instruments/inacc-ex1.png" style="width: 30%; float: left; padding: 1em 2em 1em 0em" />
 
 The highlights here show the individual pieces of instrument data, as declared by the offsets table just above it. Red means single-note instrument, green means range instrument, and blue means regional instrument. Everything above the first highlighted region is the header and the offsets table, which are unimportant for the moment.
 
@@ -54,7 +54,7 @@ The problem is that there's a bit of instrument data in the middle that doesn't 
 
 <div style="clear:left" />
 
-<img src="/blog/assets/001-sbnk-instruments/inacc-ex2.png" style="width: 30%; float: right; padding: 1em 0em 1em 2em" />
+<img src="/assets/001-sbnk-instruments/inacc-ex2.png" style="width: 30%; float: right; padding: 1em 0em 1em 2em" />
 
 Doing some more research on this, I found more examples of similar files, such as `BANK_BGM_FIELD_HOSPITAL` from *Pokemon Ranger: Guardian Signs* (on the right). This one is even worse! This file actually has more *unused* instrument data than used data.
 
@@ -117,7 +117,7 @@ To classify the remaining 40% of unknown instruments, we need fall back to weake
 
 Let's try to rule out the possibility of the instrument being of the single-note variety.
 
-<img src="/blog/assets/001-sbnk-instruments/single-note-ex.png" style="display: block; margin-left: auto; margin-right: auto; width: 50%" />
+<img src="/assets/001-sbnk-instruments/single-note-ex.png" style="display: block; margin-left: auto; margin-right: auto; width: 50%" />
 
 As an example, here's one of the single-note instruments from `BANK_MUS_DOSUN_IN`, highlighting the SWAV ID, SWAR ID, pitch value, and a blob of rather less interesting stuff. We're going to run some tests to see if our unknown data does or does not look like this.
 
@@ -150,7 +150,7 @@ if data[startOffset + 4] == 0x3C:
 
 If there are still multiple possibilities at this point, we next try to rule out range instruments.
 
-<img src="/blog/assets/001-sbnk-instruments/range-ex.png" style="width: 40%; float: right; padding: 1em 0em 1em 2em" />
+<img src="/assets/001-sbnk-instruments/range-ex.png" style="width: 40%; float: right; padding: 1em 0em 1em 2em" />
 
 Here's one of the range instruments from `BANK_MUS_DOSUN_IN`, highlighting the "min" and "max" values, and each of the note definitions following them. (You may notice that the number of note definitions is `max - min + 1`.) What can we look for to see if the unknown data is in this format?
 
@@ -176,7 +176,7 @@ if expectedLen > bytesAvailable:
 
 If there are *still* multiple possibilities, we finally try to rule out regional instruments.
 
-<img src="/blog/assets/001-sbnk-instruments/regional-ex.png" style="width: 40%; float: left; padding: 1em 2em 1em 0em" />
+<img src="/assets/001-sbnk-instruments/regional-ex.png" style="width: 40%; float: left; padding: 1em 2em 1em 0em" />
 
 Here's one of the regional instruments from `BANK_MUS_DOSUN_IN`, highlighting the eight maximum-pitches values, and each of the note definitions following them. When trying to prove that the unknown data isn't structured like this, what should we look for?
 
