@@ -45,7 +45,12 @@ The other two complications, though, *do* affect gameplay to significant degrees
 
 ## Complication 2: Toadsworth takes pity
 
-<img src="/assets/004-1up-house-part-1/pity-rule.gif" style="width: 45%; float: left; margin: 0em 2em 1em 1em" alt="A visualization showing how a card that would be unhelpful to choose on the first turn is surreptitiously moved if it is picked then." title="Toadsworth EXPOSED" />
+<video autoplay loop muted playsinline style="width: 45%; float: left; margin: 0em 2em 1em 1em" alt="A visualization showing how a card that would be unhelpful to choose on the first turn is surreptitiously moved if it is picked then." title="Toadsworth EXPOSED">
+    <source src="/assets/004-1up-house-part-1/pity-rule.webm" type="video/webm" />
+    <source src="/assets/004-1up-house-part-1/pity-rule.mp4" type="video/mp4" />
+    <source src="/assets/004-1up-house-part-1/pity-rule.ogv" type="video/ogg" />
+    <i>Your browser doesn't support HTML5 <code>&lt;video&gt;</code> tags. :( To see my animations, please try viewing this page in a browser that does!</i>
+</video>
 
 If the first block you hit contains the Bowser card or the x2 card, Toadsworth discreetly switches that card with one of the 1UP cards just before the animation plays. This makes it impossible to reveal either of those cards on the first turn, guaranteeing that you'll always win at least one 1UP, and that the x2 card (if found) will always double *something*.
 
@@ -55,7 +60,12 @@ Unlike the other factors affecting the minigame's randomness, this one is very i
 
 ## Complication 3: handling card collisions
 
-<img src="/assets/004-1up-house-part-1/intro.gif" style="width: 55%; float: right; margin: 0em 2em 1em 2em" alt="A visualization supporting the idea that to prevent multiple cards from being placed in the same block, some strategy for redistributing the probabilities is needed." title="*Boing*" />
+<video autoplay loop muted playsinline style="width: 55%; float: right; margin: 0em 2em 1em 2em" alt="A visualization supporting the idea that to prevent multiple cards from being placed in the same block, some strategy for redistributing the probabilities is needed." title="*Boing*">
+    <source src="/assets/004-1up-house-part-1/intro.webm" type="video/webm" />
+    <source src="/assets/004-1up-house-part-1/intro.mp4" type="video/mp4" />
+    <source src="/assets/004-1up-house-part-1/intro.ogv" type="video/ogg" />
+    <i>Your browser doesn't support HTML5 <code>&lt;video&gt;</code> tags. :( To see my animations, please try viewing this page in a browser that does!</i>
+</video>
 
 Something I've neglected to mention up to this point is how Toadsworth avoids putting multiple cards into the same block. After all, if you just pick a random number 0-5 three times, you could get, say, [1, 1, 4], but obviously the 3UP and x2 cards can't *both* be placed in the second block.
 
@@ -65,7 +75,12 @@ Let's quickly look at some possible correct solutions to this, before seeing Nin
 
 ### Restricting the range
 
-<img src="/assets/004-1up-house-part-1/range-restriction.gif" style="width: 55%; float: right; margin: 0em 2em 1em 2em" alt="An animated visualization of how the probabilities would be distributed among the question blocks, according to the &quot;restricting the range&quot; method." title="Or you could move conflicting cards directly to the end of the list, but I think that's harder to implement correctly." />
+<video autoplay loop muted playsinline style="width: 55%; float: right; margin: 0em 2em 1em 2em" alt="An animated visualization of how the probabilities would be distributed among the question blocks, according to the &quot;restricting the range&quot; method." title="Or you could move conflicting cards directly to the end of the list, but I think that's harder to implement correctly.">
+    <source src="/assets/004-1up-house-part-1/range-restriction.webm" type="video/webm" />
+    <source src="/assets/004-1up-house-part-1/range-restriction.mp4" type="video/mp4" />
+    <source src="/assets/004-1up-house-part-1/range-restriction.ogv" type="video/ogg" />
+    <i>Your browser doesn't support HTML5 <code>&lt;video&gt;</code> tags. :( To see my animations, please try viewing this page in a browser that does!</i>
+</video>
 
 One way to solve this would be to realize that once you've picked the 3UP card location, instead of picking a random number 0-5 for the x2 card, you should really pick a random number 0-4, since there are only 5 spots left. Then, if the number you get is greater than or equal to the first, add 1.
 
@@ -75,7 +90,12 @@ And just like that, your number is now in the range [0, 3UP card location - 1] â
 
 ### Rejection sampling
 
-<img src="/assets/004-1up-house-part-1/rejection-sampling.gif" style="width: 55%; float: right; margin: 0em 2em 1em 2em" alt="An animated visualization of how the probabilities would be distributed among the question blocks, according to the rejection sampling method." title="This one was the hardest to animate. Did it turn out OK?" />
+<video autoplay loop muted playsinline style="width: 55%; float: right; margin: 0em 2em 1em 2em" alt="An animated visualization of how the probabilities would be distributed among the question blocks, according to the rejection sampling method." title="This one was the hardest to animate. Did it turn out OK?">
+    <source src="/assets/004-1up-house-part-1/rejection-sampling.webm" type="video/webm" />
+    <source src="/assets/004-1up-house-part-1/rejection-sampling.mp4" type="video/mp4" />
+    <source src="/assets/004-1up-house-part-1/rejection-sampling.ogv" type="video/ogg" />
+    <i>Your browser doesn't support HTML5 <code>&lt;video&gt;</code> tags. :( To see my animations, please try viewing this page in a browser that does!</i>
+</video>
 
 Alternatively, you could use a discrete version of <a href="https://en.wikipedia.org/wiki/Rejection_sampling">rejection sampling</a>. After placing the 3UP card, pick a random number 0-5 for the x2 card. If it's the same as the 3UP card location, try again by picking another random number 0-5. Keep doing that until you get a number that's different. And then for the Bowser card, keep picking random numbers until you get one that matches neither of the previous two cards.
 
@@ -85,7 +105,12 @@ This is a little less efficient than the previous solution, since it might take 
 
 ### Nintendo's solution
 
-<img src="/assets/004-1up-house-part-1/nintendo.gif" style="width: 55%; float: right; margin: 0em 2em 1em 2em" alt="An animated visualization of how the probabilities are distributed, according to the method actually used in the game." title="Look at the bright side, though &mdash; Nintendo's dumb code directly led to the creation of this blog post, only fourteen years later!" />
+<video autoplay loop muted playsinline style="width: 55%; float: right; margin: 0em 2em 1em 2em" alt="An animated visualization of how the probabilities are distributed, according to the method actually used in the game." title="Look at the bright side, though &mdash; Nintendo's dumb code directly led to the creation of this blog post, only fourteen years later!">
+    <source src="/assets/004-1up-house-part-1/nintendo.webm" type="video/webm" />
+    <source src="/assets/004-1up-house-part-1/nintendo.mp4" type="video/mp4" />
+    <source src="/assets/004-1up-house-part-1/nintendo.ogv" type="video/ogg" />
+    <i>Your browser doesn't support HTML5 <code>&lt;video&gt;</code> tags. :( To see my animations, please try viewing this page in a browser that does!</i>
+</video>
 
 What actually happens could perhaps be described as "rejection sampling done wrong."
 
