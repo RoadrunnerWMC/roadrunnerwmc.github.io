@@ -60,8 +60,8 @@ To fix this, you might consider manually adjusting the exact cutoff points so th
 
 <video autoplay loop muted playsinline style="width:256px;float:right;padding: 1em 0em 1em 2em">
     <source src="/assets/002-lavalit-tower/actual.webm" type="video/webm" />
-    <!-- <source src="/assets/002-lavalit-tower/actual.mp4" type="video/mp4" /> -->
-    <!-- <source src="/assets/002-lavalit-tower/actual.ogv" type="video/ogg" /> -->
+    <source src="/assets/002-lavalit-tower/actual.mp4" type="video/mp4" />
+    <source src="/assets/002-lavalit-tower/actual.ogv" type="video/ogg" />
     <i>Your browser doesn't support HTML5 <code>&lt;video&gt;</code> tags. :( To see my animations, please try viewing this page in a browser that does!</i>
 </video>
 
