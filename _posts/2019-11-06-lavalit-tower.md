@@ -23,7 +23,12 @@ The next thing to decide, then, was how to choose *when* to switch from one brig
 
 ## A first attempt
 
-<img src="/assets/002-lavalit-tower/naive.gif" style="width:256px;float:right;padding: 1em 0em 1em 2em" />
+<video autoplay loop muted playsinline style="width:256px;float:right;padding: 1em 0em 1em 2em">
+    <source src="/assets/002-lavalit-tower/naive.webm" type="video/webm" />
+    <source src="/assets/002-lavalit-tower/naive.mp4" type="video/mp4" />
+    <source src="/assets/002-lavalit-tower/naive.ogv" type="video/ogg" />
+    <i>Your browser doesn't support HTML5 <code>&lt;video&gt;</code> tags. :( To see my animations, please try viewing this page in a browser that does!</i>
+</video>
 
 The most obvious solution would be to just divide the zone up into 10 sections vertically, and change the brightness level whenever Mario moves from one to another.
 
@@ -37,7 +42,12 @@ Overall, this works fairly decently, but there's a problem...
 
 <div style="clear:right" />
 
-<img src="/assets/002-lavalit-tower/naive-problem-demo.gif" style="width:256px;float:left;padding: 1em 2em 1em 0em" />
+<video autoplay loop muted playsinline style="width:256px;float:left;padding: 1em 2em 1em 0em">
+    <source src="/assets/002-lavalit-tower/naive-problem-demo.webm" type="video/webm" />
+    <source src="/assets/002-lavalit-tower/naive-problem-demo.mp4" type="video/mp4" />
+    <source src="/assets/002-lavalit-tower/naive-problem-demo.ogv" type="video/ogg" />
+    <i>Your browser doesn't support HTML5 <code>&lt;video&gt;</code> tags. :( To see my animations, please try viewing this page in a browser that does!</i>
+</video>
 
 As shown on the left here, the issue is that the screen will flicker whenever the player repeatedly crosses a transition point. Here, the transition point happens to fall right on the springboard, making for a very unpleasant visual experience when the player bounces on it.
 
@@ -48,7 +58,12 @@ To fix this, you might consider manually adjusting the exact cutoff points so th
 
 ## The better approach
 
-<img src="/assets/002-lavalit-tower/actual.gif" style="width:256px;float:right;padding: 1em 0em 1em 2em" />
+<video autoplay loop muted playsinline style="width:256px;float:right;padding: 1em 0em 1em 2em">
+    <source src="/assets/002-lavalit-tower/actual.webm" type="video/webm" />
+    <!-- <source src="/assets/002-lavalit-tower/actual.mp4" type="video/mp4" /> -->
+    <!-- <source src="/assets/002-lavalit-tower/actual.ogv" type="video/ogg" /> -->
+    <i>Your browser doesn't support HTML5 <code>&lt;video&gt;</code> tags. :( To see my animations, please try viewing this page in a browser that does!</i>
+</video>
 
 Here's what Newer DS actually does.
 
