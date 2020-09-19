@@ -45,7 +45,7 @@ The other two complications, though, *do* affect gameplay to significant degrees
 
 ## Complication 2: Toadsworth takes pity
 
-<video autoplay loop muted playsinline style="width: 45%; float: left; margin: 0em 2em 1em 1em" alt="A visualization showing how a card that would be unhelpful to choose on the first turn is surreptitiously moved if it is picked then." title="Toadsworth EXPOSED">
+<video autoplay controls controlslist="nodownload nofullscreen noremoteplayback" disablepictureinpicture disableremoteplayback loop muted playsinline x-webkit-airplay="deny" style="width: 45%; float: left; margin: 0em 2em 1em 1em" alt="A visualization showing how a card that would be unhelpful to choose on the first turn is surreptitiously moved if it is picked then." title="Toadsworth EXPOSED">
     <source src="/assets/004-1up-house-part-1/pity-rule.webm" type="video/webm" />
     <source src="/assets/004-1up-house-part-1/pity-rule.mp4" type="video/mp4" />
     <source src="/assets/004-1up-house-part-1/pity-rule.ogv" type="video/ogg" />
@@ -60,7 +60,7 @@ Unlike the other factors affecting the minigame's randomness, this one is very i
 
 ## Complication 3: handling card collisions
 
-<video autoplay loop muted playsinline style="width: 55%; float: right; margin: 0em 2em 1em 2em" alt="A visualization supporting the idea that to prevent multiple cards from being placed in the same block, some strategy for redistributing the probabilities is needed." title="*Boing*">
+<video autoplay controls controlslist="nodownload nofullscreen noremoteplayback" disablepictureinpicture disableremoteplayback loop muted playsinline x-webkit-airplay="deny" style="width: 55%; float: right; margin: 0em 2em 1em 2em" alt="A visualization supporting the idea that to prevent multiple cards from being placed in the same block, some strategy for redistributing the probabilities is needed." title="*Boing*">
     <source src="/assets/004-1up-house-part-1/intro.webm" type="video/webm" />
     <source src="/assets/004-1up-house-part-1/intro.mp4" type="video/mp4" />
     <source src="/assets/004-1up-house-part-1/intro.ogv" type="video/ogg" />
@@ -75,7 +75,7 @@ Let's quickly look at some possible correct solutions to this, before seeing Nin
 
 ### Restricting the range
 
-<video autoplay loop muted playsinline style="width: 55%; float: right; margin: 0em 2em 1em 2em" alt="An animated visualization of how the probabilities would be distributed among the question blocks, according to the &quot;restricting the range&quot; method." title="Or you could move conflicting cards directly to the end of the list, but I think that's harder to implement correctly.">
+<video autoplay controls controlslist="nodownload nofullscreen noremoteplayback" disablepictureinpicture disableremoteplayback loop muted playsinline x-webkit-airplay="deny" style="width: 55%; float: right; margin: 0em 2em 1em 2em" alt="An animated visualization of how the probabilities would be distributed among the question blocks, according to the &quot;restricting the range&quot; method." title="Or you could move conflicting cards directly to the end of the list, but I think that's harder to implement correctly.">
     <source src="/assets/004-1up-house-part-1/range-restriction.webm" type="video/webm" />
     <source src="/assets/004-1up-house-part-1/range-restriction.mp4" type="video/mp4" />
     <source src="/assets/004-1up-house-part-1/range-restriction.ogv" type="video/ogg" />
@@ -90,7 +90,7 @@ And just like that, your number is now in the range [0, 3UP card location - 1] â
 
 ### Rejection sampling
 
-<video autoplay loop muted playsinline style="width: 55%; float: right; margin: 0em 2em 1em 2em" alt="An animated visualization of how the probabilities would be distributed among the question blocks, according to the rejection sampling method." title="This one was the hardest to animate. Did it turn out OK?">
+<video autoplay controls controlslist="nodownload nofullscreen noremoteplayback" disablepictureinpicture disableremoteplayback loop muted playsinline x-webkit-airplay="deny" style="width: 55%; float: right; margin: 0em 2em 1em 2em" alt="An animated visualization of how the probabilities would be distributed among the question blocks, according to the rejection sampling method." title="This one was the hardest to animate. Did it turn out OK?">
     <source src="/assets/004-1up-house-part-1/rejection-sampling.webm" type="video/webm" />
     <source src="/assets/004-1up-house-part-1/rejection-sampling.mp4" type="video/mp4" />
     <source src="/assets/004-1up-house-part-1/rejection-sampling.ogv" type="video/ogg" />
@@ -105,7 +105,7 @@ This is a little less efficient than the previous solution, since it might take 
 
 ### Nintendo's solution
 
-<video autoplay loop muted playsinline style="width: 55%; float: right; margin: 0em 2em 1em 2em" alt="An animated visualization of how the probabilities are distributed, according to the method actually used in the game." title="Look at the bright side, though &mdash; Nintendo's dumb code directly led to the creation of this blog post, only fourteen years later!">
+<video autoplay controls controlslist="nodownload nofullscreen noremoteplayback" disablepictureinpicture disableremoteplayback loop muted playsinline x-webkit-airplay="deny" style="width: 55%; float: right; margin: 0em 2em 1em 2em" alt="An animated visualization of how the probabilities are distributed, according to the method actually used in the game." title="Look at the bright side, though &mdash; Nintendo's dumb code directly led to the creation of this blog post, only fourteen years later!">
     <source src="/assets/004-1up-house-part-1/nintendo.webm" type="video/webm" />
     <source src="/assets/004-1up-house-part-1/nintendo.mp4" type="video/mp4" />
     <source src="/assets/004-1up-house-part-1/nintendo.ogv" type="video/ogg" />
