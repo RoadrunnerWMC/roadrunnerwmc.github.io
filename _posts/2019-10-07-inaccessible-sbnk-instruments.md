@@ -214,6 +214,6 @@ Since this algorithm is rather ad-hoc and merely based on my own observations an
 - Or perhaps one could perform statistical analyses on what values are most likely to occur at different byte positions for different instrument types, and compare the byte values of unknown instruments to those models to see which one fits the data the best.
 - Going deeper still, this problem seems like the kind of thing that could potentially be well-suited for machine learning...
 
-The problem with all of these proposals is, do you have any idea how overkill they would be? Remember that there are literally no known uses for this inacccessible instrument data, and my existing algorithm already has a 100% success rate on all real cases I can find. There are much better things I can choose to spend my time on.
+The problem with all of these proposals is, do you have any idea how overkill they would be? Remember that there are literally no known uses for this inaccessible instrument data, and my existing algorithm already has a 100% success rate on all real cases I can find. There are much better things I can choose to spend my time on.
 
 Like writing blog posts, I guess.
