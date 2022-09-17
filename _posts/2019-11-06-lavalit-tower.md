@@ -72,3 +72,7 @@ Conceptually, we use a sort of sliding-window technique to decide when to change
 The crucial feature is that the window is *significantly taller* than the amount by which it moves up or down. This means that if Mario goes above a dividing line and immediately falls back below it, the screen won't go back to its previous brightness right away, because the bottom of the window is still quite a bit lower than the line he just crossed. The same thing happens if Mario dips below a brightness-increasing line and hops back over it.
 
 And that's how we made it so that you can't flicker the screen in Lavalit Tower by hopping in place.
+
+<div style="clear:right" />
+
+***Addendum -- 2022 update:** Apparently there's a word for this: "[hysteresis](https://en.wikipedia.org/wiki/Hysteresis)." The more you know.*
